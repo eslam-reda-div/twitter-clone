@@ -30,7 +30,7 @@ const EditModal = () => {
   }, [currentUser?.name, currentUser?.username, currentUser?.bio, currentUser?.profileImage, currentUser?.coverImage]);
   
   const [isLoading, setIsLoading] = useState(false);
-
+ 
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
@@ -42,6 +42,7 @@ const EditModal = () => {
 
       editModal.onClose();
     } catch (error) {
+      console.log(error);
       toast.error('Something went wrong');
     } finally {
       setIsLoading(false);
